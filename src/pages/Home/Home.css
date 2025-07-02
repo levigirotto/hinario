@@ -6,7 +6,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url("/images/guitar.jpg");
+  background-image: url("/public/images/guitar.jpg");
   background-size: cover;
   background-position: center;
   position: fixed;
