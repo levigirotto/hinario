@@ -2,7 +2,7 @@
   background-color: black;
   display: flex;
   flex-direction: column;
-  background-image: url("/images/guitar.jpg");
+  background-image: url("/public/images/guitar.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
