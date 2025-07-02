@@ -66,7 +66,7 @@ button.hymns.home-button {
   display: flex;
   flex-direction: column;
   text-align: center;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.9);
   color: black;
   width: 90vw;
   border-radius: 1vh;
