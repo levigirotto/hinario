@@ -50,7 +50,7 @@ export default function Hymns() {
           <nav className="hymns pag-bar">
             <button
               name="previous-button"
-              onClick={() => navigate(`/hymns/${hymnNumber - 1}`)}
+              onClick={() => navigate(`/hinos/${hymnNumber - 1}`)}
               className={`hymns pag-bar-button ${
                 hymnNumber === 1 ? "disabled" : ""
               }`}
@@ -66,7 +66,7 @@ export default function Hymns() {
             </button>
             <button
               name="next-button"
-              onClick={() => navigate(`/hymns/${hymnNumber + 1}`)}
+              onClick={() => navigate(`/hinos/${hymnNumber + 1}`)}
               className={`hymns pag-bar-button ${
                 hymnNumber === hymns.length ? "disabled" : ""
               }`}
@@ -98,7 +98,7 @@ export default function Hymns() {
                     searchNumber > 0 &&
                     searchNumber <= hymns.length
                   ) {
-                    navigate(`/hymns/${searchNumber}`);
+                    navigate(`/hinos/${searchNumber}`);
                   } else {
                     window.alert("Este hino não existe!");
                   }

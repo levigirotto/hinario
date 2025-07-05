@@ -13,14 +13,14 @@ export default function Home() {
     e.preventDefault();
     const number = parseInt(searchNumber);
     if (!isNaN(number) && number > 0 && number <= hymns.length) {
-      navigate(`/hymns/${number}`);
+      navigate(`/hinos/${number}`);
     } else {
       window.alert("Este hino não existe!");
     }
   };
 
   const openHymnal = () => {
-    navigate("/index");
+    navigate("/indice");
   };
 
   return (
