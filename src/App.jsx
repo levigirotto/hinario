@@ -13,8 +13,8 @@ export default function App() {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/hymns/:number" element={<Hymns />} />
-        <Route path="/index" element={<HymnsIndex />} />
+        <Route path="/hinos/:number" element={<Hymns />} />
+        <Route path="/indice" element={<HymnsIndex />} />
       </Routes>
     </Router>
   );

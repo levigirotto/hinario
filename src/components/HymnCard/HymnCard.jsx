@@ -7,7 +7,7 @@ function HymnCard(props) {
   return (
     <div
       onClick={() => {
-        navigate(`/hymns/${props.number}`);
+        navigate(`/hinos/${props.number}`);
       }}
       className={styles.hymncard}
     >
