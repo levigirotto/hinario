@@ -9,10 +9,6 @@ export default function Home() {
   const [searchNumber, setSearchNumber] = useState("");
   const [inputFocused, setInputFocused] = useState(false);
 
-  function goToHymns() {
-    navigate("/hymns");
-  }
-
   const handleSubmit = (e) => {
     e.preventDefault();
     const number = parseInt(searchNumber);
@@ -24,7 +20,7 @@ export default function Home() {
   };
 
   const openHymnal = () => {
-    navigate("/hymns/1");
+    navigate("/index");
   };
 
   return (

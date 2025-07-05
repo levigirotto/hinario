@@ -5,8 +5,8 @@ import { marked } from "marked";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import { GrPrevious } from "react-icons/gr";
 import { GrNext } from "react-icons/gr";
-import { GoHomeFill } from "react-icons/go";
 import hymns from "../../data/hymns.json";
+import Header from "../../components/Header/Header";
 import "./Hymns.css";
 
 export default function Hymns() {
@@ -18,10 +18,6 @@ export default function Hymns() {
   const navigate = useNavigate();
 
   if (!hymn) return <p>Hymn not found.</p>;
-
-  function goToHome() {
-    navigate("/");
-  }
 
   useEffect(() => {
     if (showOverlay) {
@@ -36,14 +32,7 @@ export default function Hymns() {
       <div
         className={`hymns-background ${showOverlay ? "overlay-active" : ""}`}
       >
-        <div className="hymns nav-bar-div">
-          <nav className="hymns nav-bar">
-            <button className="hymns home-button" onClick={goToHome}>
-              <GrPrevious /> <GoHomeFill />
-            </button>
-          </nav>
-          <p className="hymns-title">Hinário</p>
-        </div>
+        <Header />
         <div className="hymn">
           <div key={hymn.number} className="hymn-box">
             <h2 className="hymn-title">
@@ -62,7 +51,9 @@ export default function Hymns() {
             <button
               name="previous-button"
               onClick={() => navigate(`/hymns/${hymnNumber - 1}`)}
-              className="hymns pag-bar-button"
+              className={`hymns pag-bar-button ${
+                hymnNumber === 1 ? "disabled" : ""
+              }`}
             >
               <GrPrevious />
             </button>
@@ -76,7 +67,9 @@ export default function Hymns() {
             <button
               name="next-button"
               onClick={() => navigate(`/hymns/${hymnNumber + 1}`)}
-              className="hymns pag-bar-button"
+              className={`hymns pag-bar-button ${
+                hymnNumber === hymns.length ? "disabled" : ""
+              }`}
             >
               <GrNext />
             </button>
