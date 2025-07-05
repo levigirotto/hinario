@@ -1,0 +1,36 @@
+.hymncard {
+  display: flex;
+  align-items: center;
+  margin-top: 2.5vh;
+  width: 90vw;
+  height: 14vh;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 1vh;
+  padding-right: 4vw;
+  user-select: none;
+}
+
+.hymncard:active {
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+}
+
+.hymnnumber {
+  color: black;
+  margin-left: 4vw;
+  margin-right: 4vw;
+}
+
+.contentdiv {
+  display: flex;
+  flex-direction: column;
+}
+
+.hymntitle {
+  font-size: 3vh;
+}
+
+.description {
+  font-size: 2.1vh;
+}

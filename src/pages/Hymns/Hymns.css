@@ -11,20 +11,6 @@
   transition: filter 0.5s ease;
 }
 
-.nav-bar-div {
-  height: 8vh;
-  width: 100%;
-}
-
-.nav-bar {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 8vh;
-  width: 100%;
-  position: fixed;
-}
-
 button.hymns {
   font-size: 2.5vh;
   color: black;
@@ -41,19 +27,10 @@ button.hymns:active {
   color: white;
 }
 
-button.hymns.home-button {
-  font-size: 3vh;
-  width: 10vh;
-  margin-left: 5vw;
-  padding-top: 0.5vh;
-}
-
-.hymns-title {
-  margin-top: 1vh;
-  color: white;
-  font-family: "Ephesis", cursive;
-  font-size: 5.5vh;
-  text-align: center;
+button.disabled {
+  pointer-events: none;
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 .hymn {
