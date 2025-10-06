@@ -51,11 +51,9 @@ export default function Hymns() {
         <Header />
         <div className="hymn">
           <div key={hymn.number} className="hymn-box">
-            <div className="title-box">
-              <h2 className="hymn-title">
-                {hymn.number}. {hymn.title}
-              </h2>
-            </div>
+            <h2 className="hymn-title">
+              {hymn.number}. {hymn.title}
+            </h2>
             <div
               className="lyrics"
               dangerouslySetInnerHTML={{
