@@ -12,6 +12,12 @@
 }
 
 .hymns-cards-box {
-  width: 90vw;
+  width: 50vw;
   margin-bottom: 6vh;
+}
+
+@media (max-width: 768px) {
+  .hymns-cards-box {
+    width: 90vw;
+  }
 }

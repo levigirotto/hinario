@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { marked } from "marked";
@@ -16,8 +16,24 @@ export default function Hymns() {
   const hymnNumber = parseInt(number);
   const hymn = hymns.find((h) => h.number === hymnNumber);
   const navigate = useNavigate();
+  const prevButton = useRef(null);
+  const nextButton = useRef(null);
 
   if (!hymn) return <p>Hymn not found.</p>;
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "ArrowLeft" && hymnNumber > 1) {
+        prevButton.current.click();
+      } else if (e.key === "ArrowRight" && hymnNumber < hymns.length) {
+        nextButton.current.click();
+      }
+    };
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [hymnNumber, navigate, showOverlay]);
 
   useEffect(() => {
     if (showOverlay) {
@@ -35,9 +51,11 @@ export default function Hymns() {
         <Header />
         <div className="hymn">
           <div key={hymn.number} className="hymn-box">
-            <h2 className="hymn-title">
-              {hymn.number}. {hymn.title}
-            </h2>
+            <div className="title-box">
+              <h2 className="hymn-title">
+                {hymn.number}. {hymn.title}
+              </h2>
+            </div>
             <div
               className="lyrics"
               dangerouslySetInnerHTML={{
@@ -49,6 +67,7 @@ export default function Hymns() {
         <div className="hymns pag-bar-div">
           <nav className="hymns pag-bar">
             <button
+              ref={prevButton}
               name="previous-button"
               onClick={() => navigate(`/hinos/${hymnNumber - 1}`)}
               className={`hymns pag-bar-button ${
@@ -65,6 +84,7 @@ export default function Hymns() {
               {showOverlay ? <FaMagnifyingGlass /> : hymn.number}
             </button>
             <button
+              ref={nextButton}
               name="next-button"
               onClick={() => navigate(`/hinos/${hymnNumber + 1}`)}
               className={`hymns pag-bar-button ${
