@@ -30,7 +30,7 @@ export default function Home() {
 
         {!inputFocused && (
           <button className="home hymns-button" onClick={openHymnal}>
-            abrir
+            Abrir
           </button>
         )}
 
